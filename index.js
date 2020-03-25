@@ -10,7 +10,9 @@ app.listen(3000, () => {
     console.log("SERVER STARTED...");
 });
 
-app.get("/", (req, res) => {
+app.use(express.static("./public"));
+
+app.get("/api/user", (req, res) => {
     const sqlConnection = mysql.createConnection(sqlConfig);
 
     sqlConnection.query("SELECT id, email, firstname, lastname, birthdate FROM node_users WHERE id = 2 LIMIT 1", (error, result) => {
@@ -23,4 +25,19 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/api/user/create", (req, res) => {
+    const sqlConnection = mysql.createConnection(sqlConfig);
 
+    sqlConnection.query(
+        "INSERT INTO node_users VALUES (NULL, 'mimipopo@hahaha.com', 'pass', 'mimi', 'popo', '1990-4-15')", 
+        (error, result) => {
+            if (error) {
+                console.log("ERROR :", error.code);
+                res.status(503).send("oups... an error as occured !");
+            } else {
+                console.log(result);
+                res.send({ status: -"OK"});
+            }
+            sqlConnection.end();
+        });	
+});
