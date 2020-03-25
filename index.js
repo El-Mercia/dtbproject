@@ -13,21 +13,13 @@ app.listen(3000, () => {
 app.get("/", (req, res) => {
     const sqlConnection = mysql.createConnection(sqlConfig);
 
-    sqlConnection.query("SELECT id, email, firstname, lastname, birthdate FROM node_users", (error, result) => {
+    sqlConnection.query("SELECT id, email, firstname, lastname, birthdate FROM node_users WHERE id = 2 LIMIT 1", (error, result) => {
         if (error) {
             console.log("ERROR :", error.code);
         } else {
-            console.log("RESULT :", result);      
+            res.send(result [0]);     
         }
         sqlConnection.end();
-    });
-	
-    res.send({
-        id: 1,
-        email: "merciarandrianome@gmail.com",
-        firstname: "mercia",
-        lastname: "popoff",
-        birthdate: new Date(1990, 9, 6),
     });
 });
 
