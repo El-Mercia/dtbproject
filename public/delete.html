@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+    <title>Dtbprojet - Suppression d'utilisateurs</title>
+    <link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+        <h1 >Formulaires de suppression d'utilisateurs</h1>
+
+          <form method="POST" action="/api/user/delete">
+              <input
+                type="text"
+                name="userId"
+                placeholder="Id de l'utilisateur à supprimer"
+              />
+              <button type="submit">Supprimer l'utilisateur</button>    
+          </form>
+	</body>
+</html>
