@@ -10,10 +10,10 @@
 	<body>
         <h1 >Formulaires d'ajout d'utilisateurs</h1>
 
-          <form>
+          <form method="POST" action="/api/user/create">
               <input
                 type="email"
-                name="name"
+                name="email"
                 placeholder="Entrez votre email"
               />
               <input
@@ -28,12 +28,12 @@
               />
               <input
                 type="text"
-                name="Lastname"
+                name="lastname"
                 placeholder="Votre nom"
               />
               <input
                 type="date"
-                name="date"
+                name="birthdate"
                 placeholder="Votre date de naissance"
               />
               <button type="submit">Créer mon utilisateur</button>    
