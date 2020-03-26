@@ -3,25 +3,40 @@
 <html>
 
 	<head>
-		<title>Formulaire</title>
+    <title>Dtbprojet - Ajouts d'utilisateurs</title>
+    <link rel="stylesheet" href="style.css" />
 	</head>
 
 	<body>
-        <h1 >Projet 3</h1>
-        
-        ​<form action="/action_page.php">
-            <fieldset>
-              <legend>Formulaire</legend>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="firstname" name="fname" value= "toto"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lastname" name="lname" value= "blabla"><br>
-                <label for="birthday">Birthdate:</label>
-                <input type="date" id="birthday" name="birthdate" value= "1990-06_09"></br>
-                <label for="pwd">Password:</label><br>
-                <input type="password" id="pwd" name="pwd" value="&&&&&&&">
-                <input type="submit" value="Submit">
-            </fieldset>
+        <h1 >Formulaires d'ajout d'utilisateurs</h1>
+
+          <form>
+              <input
+                type="email"
+                name="name"
+                placeholder="Entrez votre email"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Entrez votre mot de passe"
+              />
+              <input
+                type="text"
+                name="firstname"
+                placeholder="Votre prénom"
+              />
+              <input
+                type="text"
+                name="Lastname"
+                placeholder="Votre nom"
+              />
+              <input
+                type="date"
+                name="date"
+                placeholder="Votre date de naissance"
+              />
+              <button type="submit">Créer mon utilisateur</button>    
           </form>
           
 
